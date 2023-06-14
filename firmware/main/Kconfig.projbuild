@@ -1,0 +1,22 @@
+menu "Example Configuration"
+
+    config EXAMPLE_FIRMWARE_UPGRADE_URL
+        string "firmware upgrade url endpoint"
+        default "https://192.168.0.3:8070/hello_world.bin"
+        help
+            URL of server which hosts the firmware
+            image.
+
+    config BROKER_URI
+        string "Broker URL"
+        default "mqtts://25892ce13ca54f009b10ee48603654a5.s2.eu.hivemq.cloud:8883"
+        help
+            URL of an mqtt broker which this example connects to.
+
+    config BROKER_BIN_SIZE_TO_SEND
+        # This option is not visible and is used only to set parameters for example tests
+        # Here we configure the data size to send and to be expected in the python script
+        int
+        default 20000
+
+endmenu
