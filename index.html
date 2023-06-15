@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>birbcam</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+<style>
+    #birb {
+        width: 100%;
+    }
+
+    html {
+        font-family: Arial, Helvetica, sans-serif;
+    }
+</style>
+</head>
+
+<body>
+    <img id="birb">
+    behold the birb and/or birbs.
+
+    <script>
+        function update_image() {
+            var img = document.getElementById("birb");
+            img.src = "https://storage.googleapis.com/hjfreyer-birbcam/latest.jpg?time=" + (new Date()).getTime();
+
+            setTimeout(update_image, 60 * 1000);
+        }
+
+        update_image();
+    </script>
+</body>
+
+</html>
