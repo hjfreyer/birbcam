@@ -1,0 +1,3 @@
+[submodule "vendor/ArduCAM-ESP32"]
+	path = vendor/ArduCAM-ESP32
+	url = git@github.com:hjfreyer/ArduCAM-ESP32.git
