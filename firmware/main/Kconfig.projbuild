@@ -19,4 +19,11 @@ menu "Example Configuration"
         int
         default 20000
 
+    config BROKER_USERNAME
+        string "Broker Username"
+        default ""
+
+    config BROKER_PASSWORD
+        string "Broker Password"
+        default ""
 endmenu

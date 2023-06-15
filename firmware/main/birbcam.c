@@ -238,8 +238,8 @@ static void mqtt_app_start(void)
             .verification.crt_bundle_attach = esp_crt_bundle_attach,
         },
         .credentials = {
-            .username = "birbcam",
-            .authentication.password = "WZVYCDyU@AAV475",
+            .username = CONFIG_BROKER_USERNAME,
+            .authentication.password = CONFIG_BROKER_PASSWORD,
         }};
 
     ESP_LOGI(TAG, "[APP] Free memory: %ld bytes", esp_get_free_heap_size());
