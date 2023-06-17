@@ -9,14 +9,45 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
-    
+
     <style>
-        #birb {
-            width: 100%;
+        * {
+            box-sizing: border-box;
         }
 
-        html {
+        html,
+        body {
+            height: 100%;
             font-family: Arial, Helvetica, sans-serif;
+            overflow: hidden;
+        }
+
+        /* sets the body height of the browser, so that backgrounds and div heights work correctly. Color and background will almost certainly be altered; they are just placeholders */
+
+        body {
+            font-size: 1.4rem;
+            text-rendering: optimizeLegibility;
+        }
+
+        /* sets the base font size for the document; turns on kerning pairs and ligatures */
+
+        body,
+        ul,
+        ol,
+        dl {
+            margin: 0;
+        }
+
+        body {
+            display: flex;
+            flex-flow: column;
+        }
+
+        #birb {
+            max-width: 100vw;
+            max-height: 100vh;
+
+            align-self: center;
         }
     </style>
 </head>
@@ -33,7 +64,7 @@
 
 <body>
     <img id="birb">
-    behold the birb and/or birbs.
+    <div class="caption">behold the birb and/or birbs.</div>
 
     <script>
         function update_image() {
