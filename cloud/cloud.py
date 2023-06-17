@@ -82,7 +82,7 @@ def message_cb(bucket):
 def waiting_period():
     now = datetime.datetime.now(tz=LOCAL_TZ)
 
-    if (now + NIGHT_INTERVAL).time < SUNRISE or SUNSET < now.time:
+    if (now + NIGHT_INTERVAL).time() < SUNRISE or SUNSET < now.time():
         return NIGHT_INTERVAL
     else:
         return DAY_INTERVAL
