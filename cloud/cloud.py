@@ -15,7 +15,7 @@ MQTT_PASSWORD = os.environ.get('MQTT_PASSWORD')
 LOCAL_TZ = pytz.timezone('US/Eastern')
 
 SUNRISE = datetime.time(hour=5, minute=20)
-SUNSET = datetime.time(hour=8, minute=30)
+SUNSET = datetime.time(hour=20, minute=30)
 
 NIGHT_INTERVAL = datetime.timedelta(hours=1)
 DAY_INTERVAL = datetime.timedelta(minutes=10)
@@ -103,8 +103,12 @@ def main():
     client.loop_start()
 
     while True:
+        print('requesting')
         client.publish('/birbcam/command/snap')
-        time.sleep(waiting_period().total_seconds())
+
+        duration = waiting_period()
+        print('sleeping for...', duration)
+        time.sleep(duration.total_seconds())
 
 
 if __name__ == '__main__':
